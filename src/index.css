@@ -1,0 +1,74 @@
+:root {
+  --standard-border: 1px solid lightgrey;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  margin: 100px auto;
+  box-shadow: 0 10px 10px -6px black;
+}
+
+h1 {
+  font-size: 16px;
+  font-weight: 500;
+  width: 100%;
+  margin: 0;
+  padding: 15px;
+  border: var(--standard-border);
+}
+
+form {
+  width: 100%;
+}
+
+.todo-input {
+  width: 100%;
+  padding: 15px;
+  margin: 0 auto;
+  border: var(--standard-border);
+}
+
+.todo-input::placeholder {
+  font-style: italic;
+}
+
+.list {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+  margin: 0;
+}
+
+.list li {
+  display: flex;
+  align-items: center;
+  border: var(--standard-border);
+  width: 100%;
+  padding: 15px;
+  font-size: 14px;
+}
+
+.list li img {
+  margin-left: auto;
+  width: 30px;
+}
+
+.checkbox {
+  margin: 0 10px 0 0;
+  height: 15px;
+  width: 15px;
+}
+
+.clear-button {
+  width: 100%;
+  padding: 15px;
+  color: gray;
+}
