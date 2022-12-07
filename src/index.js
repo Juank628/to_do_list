@@ -1,33 +1,22 @@
+import Collection from './modules/Collection.js';
+import Render from './modules/Render.js';
 import './index.css';
-import moreIcon from './img/more_icon.png';
 
-let listItemsHTML = '';
 const listSection = document.getElementById('listSection');
-const listItems = [
-  {
-    description: 'item 1',
-    completed: false,
-    index: 1,
-  },
-  {
-    description: 'item 2',
-    completed: false,
-    index: 2,
-  },
-  {
-    description: 'item 3',
-    completed: false,
-    index: 3,
-  },
-];
+const taskForm = document.getElementById('task_form');
+const taskInput = document.getElementById('task_input');
 
-const renderList = () => {
-  listItems.forEach((item) => {
-    listItemsHTML += `
-          <li><input class="checkbox" type="checkbox"> ${item.description} <img src=${moreIcon} alt=""></li>
-          `;
-  });
-  listSection.innerHTML = listItemsHTML;
-};
+const tasks = new Collection('tasks', JSON.parse(localStorage.getItem('tasks')) || []);
+const render = new Render(listSection);
 
-window.addEventListener('load', renderList);
+taskForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  tasks.addItem(taskInput.value);
+  render.show(tasks.getItems());
+});
+
+listSection.addEventListener('click', (e) => {
+  console.log(e.target.matches('.more-icon'));
+});
+
+window.addEventListener('load', render.show(tasks.getItems()));
