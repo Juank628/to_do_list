@@ -21,19 +21,14 @@
   - [Prerequisites](#prerequisites)
   - [Install](#install)
   - [Usage](#usage)
-  - [Run tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
-- [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ](#faq)
-- [📝 License](#license)
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [your_project_name] <a name="about-project"></a>
+# 📖 To-Do List <a name="about-project"></a>
 
 "To-Do List" is a simple website that displays a list of activities and allows you to add and remove activities from that list. By building this application, we learned how to manage data using JavaScript. Thanks to that your website will be more interactive.
 
@@ -83,7 +78,11 @@ git clone git@github.com:Juank628/to_do_list.git
 
 Install this project with:
 
-npm install
+- npm install    (to install all the packages needed)
+- npm run build  (to generate the distribution files)
+- npm run dev    (to start the Webpack dev server)
+
+Feel free to change the webpack.config.js file to modify the dev server settings.
 
 ### Usage
 
@@ -92,14 +91,14 @@ This page registers to-do activities. To register an activity:
 2. Press enter key.
 3. The activity will be added to the list and will be displayed.
 
-To remove a book from the list:
+To remove an activity from the list:
 1. Find the activity in the list.
 2. Click on the more button for the respective activity.
 3. Click on the delete button.
 
 <!-- AUTHORS -->
 
-## 👥 Authors <a name="authors"></a>
+## 👥 Author <a name="authors"></a>
 
 👤 **Juan Carlos Sanchez**
 
