@@ -2,10 +2,8 @@
 
 <div align="center">
 
-  <img src="murple_logo.png" alt="logo" width="140"  height="auto" />
+  <img src="my_logo.jpg" alt="logo" width="140"  height="auto" />
   <br/>
-
-  <h3><b>Microverse README Template</b></h3>
 
 </div>
 
@@ -89,15 +87,15 @@ npm install
 
 ### Usage
 
-This page registers books with author and title of the book. To register a book:
-1. Type the author's name.
-2. Type the book's title.
-3. Click on Add button below.
-4. The books will be added to the list and will be displayed.
+This page registers to-do activities. To register an activity:
+1. Type the activity's description.
+2. Press enter key.
+3. The activity will be added to the list and will be displayed.
 
 To remove a book from the list:
-1. Find the book in the list.
-2. Click on remove button for the respective book.
+1. Find the activity in the list.
+2. Click on the more button for the respective activity.
+3. Click on the delete button.
 
 <!-- AUTHORS -->
 
