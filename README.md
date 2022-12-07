@@ -107,11 +107,6 @@ To remove a book from the list:
 - Twitter: [@juancadev81](https://twitter.com/juancadev81)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/juan-carlos-sanchez-zunino-271b5151)
 
-👤 **Ivan Martinez von Halle**
-
-- GitHub: [@ivanmvh](https://github.com/ivanmvh)
-- Twitter: [@imprivado](https://twitter.com/imprivado)
-- LinkedIn: [Iván Martínez von Halle](https://www.linkedin.com/in/ivan-martinez-von-halle/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
