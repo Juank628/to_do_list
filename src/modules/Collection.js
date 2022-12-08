@@ -18,6 +18,8 @@ export default class Collection {
 
   removeItem = (index) => {
     this.items.splice(index, 1);
+    const newItems = this.items.map((item, index) => ({ ...item, index }));
+    this.items = newItems;
     this.items.sort((a, b) => a.index - b.index);
     localStorage.setItem(this.localStorageItem, JSON.stringify(this.items));
   };
