@@ -1,33 +1,52 @@
+import Collection from './modules/Collection.js';
+import Render from './modules/Render.js';
 import './index.css';
-import moreIcon from './img/more_icon.png';
 
-let listItemsHTML = '';
 const listSection = document.getElementById('listSection');
-const listItems = [
-  {
-    description: 'item 1',
-    completed: false,
-    index: 1,
-  },
-  {
-    description: 'item 2',
-    completed: false,
-    index: 2,
-  },
-  {
-    description: 'item 3',
-    completed: false,
-    index: 3,
-  },
-];
+const taskForm = document.getElementById('task_form');
+const taskInput = document.getElementById('task_input');
 
-const renderList = () => {
-  listItems.forEach((item) => {
-    listItemsHTML += `
-          <li><input class="checkbox" type="checkbox"> ${item.description} <img src=${moreIcon} alt=""></li>
-          `;
-  });
-  listSection.innerHTML = listItemsHTML;
-};
+const tasks = new Collection(
+  'tasks',
+  JSON.parse(localStorage.getItem('tasks')) || [],
+);
+const render = new Render(listSection);
 
-window.addEventListener('load', renderList);
+taskForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  tasks.addItem(taskInput.value);
+  render.show(tasks.getItems());
+});
+
+listSection.addEventListener('click', (e) => {
+  if (e.target.matches('.more-icon')) {
+    const input = document.getElementById(
+      `description-${e.target.dataset.index}`,
+    );
+    const listItem = document.getElementById(
+      `list-item-${e.target.dataset.index}`,
+    );
+    const moreIcon = document.getElementById(`more-${e.target.dataset.index}`);
+    const deleteIcon = document.getElementById(
+      `delete-${e.target.dataset.index}`,
+    );
+    input.disabled = false;
+    input.style = 'background-color: yellow; border: 0';
+    listItem.style = 'background-color: yellow';
+    moreIcon.style = 'display: none';
+    deleteIcon.style = 'display: block';
+  }
+  if (e.target.matches('.delete-icon')) {
+    tasks.removeItem(e.target.dataset.index);
+    render.show(tasks.getItems());
+  }
+});
+
+listSection.addEventListener('keyup', (e) => {
+  if (e.key === 'Enter') {
+    tasks.updateItem(e.target.dataset.index, e.target.value);
+    render.show(tasks.getItems());
+  }
+});
+
+window.addEventListener('load', render.show(tasks.getItems()));

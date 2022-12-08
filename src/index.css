@@ -29,14 +29,14 @@ form {
   width: 100%;
 }
 
-.todo-input {
+.task-input {
   width: 100%;
   padding: 15px;
   margin: 0 auto;
   border: var(--standard-border);
 }
 
-.todo-input::placeholder {
+.task-input::placeholder {
   font-style: italic;
 }
 
@@ -56,15 +56,35 @@ form {
   font-size: 14px;
 }
 
-.list li img {
+.more-icon {
   margin-left: auto;
   width: 30px;
+}
+
+.delete-icon {
+  margin-left: auto;
+  width: 25px;
+  display: none;
 }
 
 .checkbox {
   margin: 0 10px 0 0;
   height: 15px;
   width: 15px;
+}
+
+.task-description {
+  width: 80%;
+}
+
+.task-description:disabled {
+  border: 0 solid white;
+  background-color: white;
+  color: black;
+}
+
+.task-description:focus {
+  outline: none;
 }
 
 .clear-button {
