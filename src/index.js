@@ -19,9 +19,13 @@ listSection.addEventListener('click', (e) => {
   if (e.target.matches('.more-icon')) {
     const input = document.getElementById(`description-${e.target.dataset.index}`);
     const listItem = document.getElementById(`list-item-${e.target.dataset.index}`);
+    const moreIcon = document.getElementById(`more-${e.target.dataset.index}`);
+    const deleteIcon = document.getElementById(`delete-${e.target.dataset.index}`);
     input.disabled = false;
     input.style = 'background-color: yellow; border: 0';
     listItem.style = 'background-color: yellow';
+    moreIcon.style = 'display: none';
+    deleteIcon.style = 'display: block';
   }
 });
 

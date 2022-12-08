@@ -61,6 +61,12 @@ form {
   width: 30px;
 }
 
+.delete-icon {
+  margin-left: auto;
+  width: 25px;
+  display: none;
+}
+
 .checkbox {
   margin: 0 10px 0 0;
   height: 15px;
