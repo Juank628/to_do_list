@@ -5,6 +5,7 @@ import './index.css';
 const listSection = document.getElementById('listSection');
 const taskForm = document.getElementById('task_form');
 const taskInput = document.getElementById('task_input');
+const clearButton = document.getElementById('clear_button');
 
 const tasks = new Collection(
   'tasks',
@@ -31,7 +32,6 @@ listSection.addEventListener('click', (e) => {
       `delete-${e.target.dataset.index}`,
     );
     input.disabled = false;
-    input.style = 'background-color: yellow; border: 0';
     listItem.style = 'background-color: yellow';
     moreIcon.style = 'display: none';
     deleteIcon.style = 'display: block';
@@ -40,13 +40,25 @@ listSection.addEventListener('click', (e) => {
     tasks.removeItem(e.target.dataset.index);
     render.show(tasks.getItems());
   }
+
+  if (e.target.matches('.checkbox')) {
+    let value = false;
+    if (e.target.checked) value = true;
+    tasks.updateItem(e.target.dataset.index, 'completed', value);
+    render.show(tasks.getItems());
+  }
 });
 
 listSection.addEventListener('keyup', (e) => {
   if (e.key === 'Enter') {
-    tasks.updateItem(e.target.dataset.index, e.target.value);
+    tasks.updateItem(e.target.dataset.index, 'description', e.target.value);
     render.show(tasks.getItems());
   }
+});
+
+clearButton.addEventListener('click', () => {
+  tasks.removeAllCompleted();
+  render.show(tasks.getItems());
 });
 
 window.addEventListener('load', render.show(tasks.getItems()));

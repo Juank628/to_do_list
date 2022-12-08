@@ -25,9 +25,11 @@ export default class Collection {
     localStorage.setItem(this.localStorageItem, JSON.stringify(this.items));
   };
 
-  updateItem = (index, value) => {
+  updateItem = (index, property, value) => {
     const newItems = this.items.map((item) => {
-      if (item.index === parseInt(index, 10)) return { ...item, description: value };
+      if (item.index === parseInt(index, 10)) {
+        item[property] = value;
+      }
       return item;
     });
     this.items = newItems;
@@ -35,4 +37,12 @@ export default class Collection {
   };
 
   getItems = () => this.items.sort((a, b) => a.index - b.index);
+
+  removeAllCompleted = () => {
+    this.items = this.items.filter((item) => item.completed === false);
+    const newItems = this.items.map((item, index) => ({ ...item, index: index + 1 }));
+    this.items = newItems;
+    this.items.sort((a, b) => a.index - b.index);
+    localStorage.setItem(this.localStorageItem, JSON.stringify(this.items));
+  }
 }
