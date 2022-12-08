@@ -16,7 +16,20 @@ taskForm.addEventListener('submit', (e) => {
 });
 
 listSection.addEventListener('click', (e) => {
-  console.log(e.target.matches('.more-icon'));
+  if (e.target.matches('.more-icon')) {
+    const input = document.getElementById(`description-${e.target.dataset.index}`);
+    const listItem = document.getElementById(`list-item-${e.target.dataset.index}`);
+    input.disabled = false;
+    input.style = 'background-color: yellow; border: 0';
+    listItem.style = 'background-color: yellow';
+  }
+});
+
+listSection.addEventListener('keyup', (e) => {
+  if (e.key === 'Enter') {
+    tasks.updateItem(e.target.dataset.index, e.target.value);
+    render.show(tasks.getItems());
+  }
 });
 
 window.addEventListener('load', render.show(tasks.getItems()));

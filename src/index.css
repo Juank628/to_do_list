@@ -67,6 +67,20 @@ form {
   width: 15px;
 }
 
+.task-description {
+  width: 80%;
+}
+
+.task-description:disabled {
+  border: 0 solid white;
+  background-color: white;
+  color: black;
+}
+
+.task-description:focus {
+  outline: none;
+}
+
 .clear-button {
   width: 100%;
   padding: 15px;

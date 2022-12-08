@@ -6,8 +6,7 @@ export default class Collection {
 
   addItem = (description) => {
     const completed = false;
-    let index = 0;
-    if (this.items.lenght >= 1) index = this.items.pop().index + 1;
+    const index = this.items.length;
     this.items.push({
       description,
       completed,
@@ -21,7 +20,16 @@ export default class Collection {
     this.items.splice(index, 1);
     this.items.sort((a, b) => a.index - b.index);
     localStorage.setItem(this.localStorageItem, JSON.stringify(this.items));
-  }
+  };
+
+  updateItem = (index, value) => {
+    const newItems = this.items.map((item) => {
+      if (item.index === parseInt(index, 10)) return { ...item, description: value };
+      return item;
+    });
+    this.items = newItems;
+    localStorage.setItem(this.localStorageItem, JSON.stringify(this.items));
+  };
 
   getItems = () => this.items.sort((a, b) => a.index - b.index);
 }
