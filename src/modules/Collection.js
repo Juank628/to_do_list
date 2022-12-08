@@ -6,7 +6,7 @@ export default class Collection {
 
   addItem = (description) => {
     const completed = false;
-    const index = this.items.length;
+    const index = this.items.length + 1;
     this.items.push({
       description,
       completed,
@@ -17,8 +17,9 @@ export default class Collection {
   };
 
   removeItem = (index) => {
-    this.items.splice(index, 1);
-    const newItems = this.items.map((item, index) => ({ ...item, index }));
+    const arrayIndexToDelete = index - 1;
+    this.items.splice(arrayIndexToDelete, 1);
+    const newItems = this.items.map((item, index) => ({ ...item, index: index + 1 }));
     this.items = newItems;
     this.items.sort((a, b) => a.index - b.index);
     localStorage.setItem(this.localStorageItem, JSON.stringify(this.items));
