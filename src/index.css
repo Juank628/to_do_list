@@ -75,6 +75,8 @@ form {
 
 .task-description {
   width: 80%;
+  background-color: transparent;
+  border: 0;
 }
 
 .task-description:disabled {
