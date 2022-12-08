@@ -40,11 +40,18 @@ listSection.addEventListener('click', (e) => {
     tasks.removeItem(e.target.dataset.index);
     render.show(tasks.getItems());
   }
+
+  if (e.target.matches('.checkbox')) {
+    let value = false;
+    if (e.target.checked) value = true;
+    tasks.updateItem(e.target.dataset.index, 'completed', value);
+    render.show(tasks.getItems());
+  }
 });
 
 listSection.addEventListener('keyup', (e) => {
   if (e.key === 'Enter') {
-    tasks.updateItem(e.target.dataset.index, e.target.value);
+    tasks.updateItem(e.target.dataset.index, 'description', e.target.value);
     render.show(tasks.getItems());
   }
 });

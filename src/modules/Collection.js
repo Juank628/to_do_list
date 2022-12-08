@@ -25,9 +25,11 @@ export default class Collection {
     localStorage.setItem(this.localStorageItem, JSON.stringify(this.items));
   };
 
-  updateItem = (index, value) => {
+  updateItem = (index, property, value) => {
     const newItems = this.items.map((item) => {
-      if (item.index === parseInt(index, 10)) return { ...item, description: value };
+      if (item.index === parseInt(index, 10)) {
+        item[property] = value;
+      }
       return item;
     });
     this.items = newItems;
