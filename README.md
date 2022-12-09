@@ -54,7 +54,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-[Live Demo Link] (...come soon)
+[https://juank628.github.io/to_do_list/] (click here for live-demo)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To-do list</title>
-<script defer src="main.js"></script></head>
-<body>
+  <script defer src="main.js"></script></head>
+  <body>
     <main>
-        <section class="main-container">
-            <h1>Today's To Do</h1>
-            <input type="text">
-            <ul>
-                <li>item xxx</li>
-                <li>item xxx</li>
-                <li>item xxx</li>
-            </ul>
-        </section>
+      <section class="main-container">
+        <h1>Today's To Do</h1>
+        <form id="task_form">
+          <input id="task_input" class="task-input" type="text" placeholder="Add to your list..." />
+        </form>
+        <ul id="listSection" class="list"></ul>
+        <button id="clear_button" class="clear-button" type="button">Clear all completed</button>
+      </section>
     </main>
-</body>
+  </body>
 </html>
