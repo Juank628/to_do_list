@@ -14,6 +14,7 @@ export default class Collection {
     });
     this.items.sort((a, b) => a.index - b.index);
     localStorage.setItem(this.localStorageItem, JSON.stringify(this.items));
+    return this.items;
   };
 
   removeItem = (index) => {
@@ -23,6 +24,7 @@ export default class Collection {
     this.items = newItems;
     this.items.sort((a, b) => a.index - b.index);
     localStorage.setItem(this.localStorageItem, JSON.stringify(this.items));
+    return this.items;
   };
 
   updateItem = (index, property, value) => {
