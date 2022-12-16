@@ -6,7 +6,7 @@ import Render from '../src/modules/Render.js';
 
 describe('update and clear', () => {
   /*
-  * update description property
+  * test for edit description
   */
   test('update description', () => {
     const collection = new Collection('tasks', [
@@ -38,7 +38,7 @@ describe('update and clear', () => {
     ]);
   });
 
-  test('render after description update', () => {
+  test('render after edit description', () => {
     document.body.innerHTML = '<ul id="list"></ul>';
     const list = document.getElementById('list');
     const render = new Render(list);
@@ -62,7 +62,7 @@ describe('update and clear', () => {
   });
 
   /*
-  * update completed property
+  * test for update completed status
   */
   test('update completed', () => {
     const collection = new Collection('tasks', [
@@ -119,6 +119,9 @@ describe('update and clear', () => {
     expect(inlineStyle).toBe('line-through');
   });
 
+  /*
+  * test for clear all completed tasks
+  */
   test('clear completed', () => {
     const collection = new Collection('tasks', [
       {
