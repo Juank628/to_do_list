@@ -36,6 +36,7 @@ export default class Collection {
     });
     this.items = newItems;
     localStorage.setItem(this.localStorageItem, JSON.stringify(this.items));
+    return this.items;
   };
 
   getItems = () => this.items.sort((a, b) => a.index - b.index);
