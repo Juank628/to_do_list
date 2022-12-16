@@ -74,7 +74,7 @@ describe('add and remove', () => {
         index: 2,
       },
     ]);
-    
+
     expect(collection.removeItem(1)).toStrictEqual([
       {
         description: 'second',
